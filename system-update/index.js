@@ -43,8 +43,8 @@ new Promise(async (resolve, reject) => {
     resolve('Atualização concluída com sucesso.');
 })
 .then(message => {
-  console.log(message);
+  console.log(chalk.bgGreen.black(`\n${message}`));
 })
 .catch(error => {
-  console.error(error);
+  console.error(chalk.bgRed.black(`\n${error}`));
 });
