@@ -27,17 +27,17 @@ new Promise(async (resolve, reject) => {
         return resolve('Nenhuma atualização disponível.');
     }
 
-    console.log(chalk.yellowBright('\n[2/5] Instalando atualizações de pacotes...'));
+    console.log(chalk.bgBlueBright.black('\n[2/5] Instalando atualizações de pacotes...'));
     await commandExec.run(`sudo apt upgrade -y ${softwaresToUpgrade}`);
 
-    console.log(chalk.yellowBright('\n[3/5] Atualizando Flatpak...'));    
+    console.log(chalk.bgBlueBright.black('\n[3/5] Atualizando Flatpak...'));    
     await commandExec.run('flatpak update -y');
 
-    console.log(chalk.yellowBright('\n[4/5] Limpando pacotes desnecessários...'));
+    console.log(chalk.bgBlueBright.black('\n[4/5] Limpando pacotes desnecessários...'));
     await commandExec.run('sudo apt autoremove -y');
     await commandExec.run('sudo apt autoclean -y');
 
-    console.log(chalk.yellowBright('\n[5/5] Atualizando banco de dados de arquivos...'));
+    console.log(chalk.bgBlueBright.black('\n[5/5] Atualizando banco de dados de arquivos...'));
     await commandExec.run('sudo updatedb');
     
     resolve('Atualização concluída com sucesso.');
